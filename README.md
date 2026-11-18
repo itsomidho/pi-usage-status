@@ -10,8 +10,34 @@ A compact status-line extension for [Pi](https://github.com/earendil-works/pi). 
 
 Requires Node.js 22.13+ and Pi. Developed with `@earendil-works/pi-coding-agent` 1.5.2.
 
+### From GitHub
+
 ```sh
 pi install git:github.com/itsomidho/pi-usage-status
+```
+
+### Without Git (release archive)
+
+You can install a tagged release directly into Pi's auto-discovered extensions directory without cloning or using a Git repository.
+
+Fish:
+
+```fish
+if not set -q PI_USAGE_STATUS_HOME
+    set PI_USAGE_STATUS_HOME "$HOME/.pi/agent/extensions/pi-usage-status"
+end
+mkdir -p "$PI_USAGE_STATUS_HOME"
+curl -L https://github.com/itsomidho/pi-usage-status/archive/refs/tags/v0.1.0.tar.gz \
+  | tar -xz --strip-components=1 -C "$PI_USAGE_STATUS_HOME"
+```
+
+Bash/Zsh:
+
+```sh
+PI_USAGE_STATUS_HOME="${PI_USAGE_STATUS_HOME:-$HOME/.pi/agent/extensions/pi-usage-status}"
+mkdir -p "$PI_USAGE_STATUS_HOME"
+curl -L https://github.com/itsomidho/pi-usage-status/archive/refs/tags/v0.1.0.tar.gz \
+  | tar -xz --strip-components=1 -C "$PI_USAGE_STATUS_HOME"
 ```
 
 Then run `/reload` inside Pi or restart it.

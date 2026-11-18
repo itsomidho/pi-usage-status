@@ -17,7 +17,8 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "test": "node --experimental-strip-types --check extensions/usage-limits.ts"
+    "test": "node --experimental-strip-types --check extensions/usage-limits.ts",
+    "install:local": "pi install ."
   },
   "peerDependencies": {
     "@earendil-works/pi-coding-agent": "*",
