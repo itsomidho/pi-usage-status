@@ -1,0 +1,31 @@
+{
+  "name": "pi-usage-status",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A compact Pi status line for provider quotas, system metrics, and working status.",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "status",
+    "usage"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsomidho/pi-usage-status.git"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --check extensions/usage-limits.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": [
+      "./extensions/usage-limits.ts"
+    ]
+  }
+}
